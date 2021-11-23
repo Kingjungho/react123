@@ -12,7 +12,9 @@ import { gsap } from "gsap";
 
 
 require("dotenv").config();
+
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+
 
 
 function Youtube() {
@@ -41,7 +43,7 @@ function Youtube() {
             redirect: 'follow'
         };
 
-        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyAjNvmedw0r9CMRSq9sS8BZOYzeKNidh_A&maxResults=30&type=video`, requestOptions)
+        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=alexisreact&key=AIzaSyAjNvmedw0r9CMRSq9sS8BZOYzeKNidh_A&maxResults=30&type=video`, requestOptions)
         .then(response => response.json())
         .then(result => setVideos(result.items))
         .catch(error => console.log('error', error));
